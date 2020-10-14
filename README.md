@@ -2,7 +2,8 @@
 
 [![License MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-Project uses Razor Pages & MS SQL Server Express v13
+Project uses Razor Pages & MS SQL Server Express v13.
+
 It features:
 *	User registration
 *	Login and Logout of user accounts
