@@ -1,0 +1,35 @@
+﻿@page
+@model ReactionTimerWebsite.Pages.HighScoresModel
+@{
+    ViewData["Title"] = "HighScores";
+}
+
+<h1>HighScores</h1>
+<br />
+<br />
+
+<table id="highScoresTable" class="table table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">@Html.DisplayNameFor(model => model.rows[0].place)</th>
+            <th scope="col">@Html.DisplayNameFor(model => model.rows[0].username)</th>
+            <th scope="col">@Html.DisplayNameFor(model => model.rows[0].timePerTarget)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.rows)
+        {
+            <tr class="@(item.isCurUser ? "table-info" : "")">
+                <td>
+                    @Html.DisplayFor(modelItem => item.place)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.username)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.timePerTarget)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

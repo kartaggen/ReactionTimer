@@ -1,0 +1,26 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Reaction Timer</h1>
+</div>
+<div id="start" class="text-center m-4">
+    <div class="btn btn-primary">Start Game</div>
+</div>
+<div id="game" class="text-center m-4">
+    @Html.AntiForgeryToken()
+    <h3 id="targetsLeft"></h3>
+    <div id="aim"></div>
+</div>
+<div id="end" class="text-center m-4">
+    <h3 class="m-2">
+        Total Time: <small id="totalTimeSmall"></small>
+    </h3>
+    <h3 class="m-2">
+        Time per target: <small id="timePerTargetSmall"></small>
+    </h3>
+    <div class="btn btn-primary m-2">Try Again</div>
+</div>

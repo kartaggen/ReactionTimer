@@ -1,0 +1,36 @@
+﻿@page
+@model ReactionTimerWebsite.Pages.StatisticsModel
+@{
+    ViewData["Title"] = "Statistics";
+}
+
+<h1>Statistics</h1>
+<br />
+<br />
+<h2>Total games: <small id="totalGames"></small></h2>
+<canvas id="statsChart"></canvas>
+
+@section scripts{
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script>
+        (function ($) {
+            let dels = @Html.Raw(Json.Serialize(Model.delimiters));
+            let tis = @Html.Raw(Json.Serialize(Model.times));
+
+            var ctx = document.getElementById('statsChart').getContext('2d');
+            var chart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: dels,
+                    datasets: [{
+                        label: 'Game Times',
+                        backgroundColor: 'rgb(177, 255, 255)',
+                        borderColor: 'rgb(82,239,253)',
+                        data: tis
+                    }]
+                },
+                options: {}
+            });
+            $("#totalGames").text(@Html.Raw(Json.Serialize(Model.totalGames)));
+        })(jQuery);</script>
+}
