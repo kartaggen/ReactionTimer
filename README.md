@@ -1,13 +1,14 @@
 # Reaction Timer - Web App
 
 [![License MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
 Project uses Razor Pages & MS SQL Server Express v13
 It features:
-•	User registration
-•	Login and Logout of user accounts
-•	Reaction game which collects every game after it's finished in the database
-•	Top 10 high scores that any player has achieved and their username and at what place the current user's top game is placed
-•	Statistics of the current user's games
+*	User registration
+*	Login and Logout of user accounts
+*	Reaction game which collects every game after it's finished in the database
+*	Top 10 high scores that any player has achieved and their username and at what place the current user's top game is placed
+*	Statistics of the current user's games
 (Account registration and login use [BCrypt.Net-Core](https://www.nuget.org/packages/BCrypt.Net-Core/) for secure storage of passwords.)
 
 ## Prerequisites
